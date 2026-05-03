@@ -84,6 +84,9 @@ def run_lavalink(
 
         dirs = []
 
+        if java_env_path := os.environ.get("JAVA_PATH"):
+            dirs.append(java_env_path)
+
         try:
             dirs.append(os.path.join(os.environ["JAVA_HOME"] + "bin/java"))
         except KeyError:
@@ -258,7 +261,7 @@ def run_lavalink(
 
     java_cmd += " -jar Lavalink.jar"
 
-    print("🌋 - Iniciando o servidor Lavalink (dependendo da hospedagem o lavalink pode demorar iniciar, "
+    print("LL - Iniciando o servidor Lavalink (dependendo da hospedagem o lavalink pode demorar iniciar, "
           "o que pode ocorrer falhas em algumas tentativas de conexão até ele iniciar totalmente).")
 
     lavalink_process = subprocess.Popen(java_cmd.split(), stdout=subprocess.DEVNULL)

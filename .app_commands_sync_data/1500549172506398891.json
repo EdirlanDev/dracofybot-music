@@ -1,0 +1,1302 @@
+[
+    {
+        "type": 1,
+        "name": "247",
+        "default_member_permissions": "32",
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Ativar/Desativar o modo 24/7 do player (Em testes).",
+        "options": []
+    },
+    {
+        "type": 2,
+        "name": "Add DJ",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": null,
+        "dm_permission": true,
+        "name_localizations": {
+            "pt-BR": "Adicionar DJ"
+        }
+    },
+    {
+        "type": 2,
+        "name": "Avatar",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": null,
+        "dm_permission": true
+    },
+    {
+        "type": 1,
+        "name": "about",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83d\udd30 Diversos] | Exibir informa\u00e7\u00f5es sobre mim.",
+        "options": []
+    },
+    {
+        "type": 3,
+        "name": "add to queue",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": null,
+        "dm_permission": true
+    },
+    {
+        "type": 1,
+        "name": "add_dj",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Adicionar um membro \u00e0 lista de DJ's na sess\u00e3o atual do player.",
+        "options": [
+            {
+                "name": "membro",
+                "description": "Membro a ser adicionado.",
+                "type": 6,
+                "required": true
+            }
+        ]
+    },
+    {
+        "type": 1,
+        "name": "add_dj_role",
+        "default_member_permissions": "32",
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83d\udd27 Configura\u00e7\u00f5es] | Adicionar um cargo para a lista de DJ's do servidor.",
+        "options": [
+            {
+                "name": "cargo",
+                "description": "Cargo",
+                "type": 8,
+                "required": true
+            }
+        ]
+    },
+    {
+        "type": 1,
+        "name": "autoplay",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Ativar/Desativar a reprodu\u00e7\u00e3o autom\u00e1tica ao acabar as m\u00fasicas da fila.",
+        "options": []
+    },
+    {
+        "type": 1,
+        "name": "back",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Voltar para a m\u00fasica anterior.",
+        "options": []
+    },
+    {
+        "type": 1,
+        "name": "change_node",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Migrar o player para outro servidor de m\u00fasica.",
+        "options": [
+            {
+                "name": "servidor",
+                "description": "Servidor de m\u00fasica",
+                "type": 3,
+                "required": true,
+                "autocomplete": true
+            }
+        ]
+    },
+    {
+        "type": 1,
+        "name": "change_skin",
+        "default_member_permissions": "32",
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83d\udd27 Configura\u00e7\u00f5es] | Alterar apar\u00eancia/skin do player.",
+        "options": []
+    },
+    {
+        "type": 1,
+        "name": "command_log",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Ver o log de uso dos comandos.",
+        "options": []
+    },
+    {
+        "type": 1,
+        "name": "connect",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Me conectar em um canal de voz (ou me mover para um).",
+        "options": [
+            {
+                "name": "canal",
+                "description": "Canal para me conectar",
+                "type": 7,
+                "required": true,
+                "channel_types": [
+                    2,
+                    13
+                ]
+            }
+        ]
+    },
+    {
+        "type": 1,
+        "name": "controller",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Enviar player controller para um canal espec\u00edfico/atual.",
+        "options": []
+    },
+    {
+        "type": 1,
+        "name": "custom_skin",
+        "default_member_permissions": "8",
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83d\udd27 Configura\u00e7\u00f5es] | Criar suas pr\u00f3prias skins/templates para o player de m\u00fasica.",
+        "options": []
+    },
+    {
+        "type": 1,
+        "name": "fav_manager",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Gerenciar seus favoritos/integra\u00e7\u00f5es e links do server.",
+        "options": []
+    },
+    {
+        "type": 1,
+        "name": "guia_setup",
+        "default_member_permissions": "32",
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": null,
+        "dm_permission": true,
+        "description": "[Admin] Envia o manual de uso do DracoFy DJ neste canal.",
+        "options": []
+    },
+    {
+        "type": 1,
+        "name": "invite",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83d\udd30 Diversos] | Exibir meu link de convite para voc\u00ea me adicionar no seu servidor.",
+        "options": []
+    },
+    {
+        "type": 1,
+        "name": "loop_amount",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Definir quantidade de repeti\u00e7\u00f5es da m\u00fasica atual.",
+        "options": [
+            {
+                "name": "valor",
+                "description": "n\u00famero de repeti\u00e7\u00f5es.",
+                "type": 4,
+                "required": true
+            }
+        ]
+    },
+    {
+        "type": 1,
+        "name": "loop_mode",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Selecionar modo de repeti\u00e7\u00e3o entre: atual / fila ou desativar.",
+        "options": [
+            {
+                "name": "modo",
+                "description": "-",
+                "type": 3,
+                "required": true,
+                "choices": [
+                    {
+                        "name": "Current",
+                        "value": "current",
+                        "name_localizations": {
+                            "pt-BR": "M\u00fasica Atual"
+                        }
+                    },
+                    {
+                        "name": "Off",
+                        "value": "off",
+                        "name_localizations": {
+                            "pt-BR": "Desativar"
+                        }
+                    },
+                    {
+                        "name": "Queue",
+                        "value": "queue",
+                        "name_localizations": {
+                            "pt-BR": "Fila"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": 1,
+        "name": "move",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Mover m\u00fasicas da fila.",
+        "options": [
+            {
+                "name": "playlist",
+                "description": "Incluir nome que tiver na playlist.",
+                "type": 3,
+                "autocomplete": true
+            },
+            {
+                "name": "nome",
+                "description": "Incluir um nome que tiver na m\u00fasica.",
+                "type": 3,
+                "autocomplete": true
+            },
+            {
+                "name": "uploader",
+                "description": "Incluir um nome que tiver no autor/artista/uploader da m\u00fasica.",
+                "type": 3,
+                "autocomplete": true
+            },
+            {
+                "name": "membros_ausentes",
+                "description": "Incluir m\u00fasicas adicionads por membros que sa\u00edram do canal.",
+                "type": 5
+            },
+            {
+                "name": "dura\u00e7\u00e3o_m\u00e1xima",
+                "description": "Incluir m\u00fasicas com dura\u00e7\u00e3o m\u00e1xima especificada (ex. 1:45).",
+                "type": 3
+            },
+            {
+                "name": "duplicados",
+                "description": "Incluir m\u00fasicas duplicadas",
+                "type": 5
+            },
+            {
+                "name": "membro",
+                "description": "Incluir m\u00fasicas pedidas pelo membro selecionado.",
+                "type": 6
+            },
+            {
+                "name": "posi\u00e7\u00e3o",
+                "description": "Posi\u00e7\u00e3o de destino na fila (Opcional).",
+                "type": 4,
+                "min_value": 1,
+                "max_value": 900
+            },
+            {
+                "name": "quantidade",
+                "description": "Quantidade de m\u00fasicas para mover.",
+                "type": 4,
+                "min_value": 0,
+                "max_value": 99
+            },
+            {
+                "name": "dura\u00e7\u00e3o_inicial",
+                "description": "incluir m\u00fasicas com dura\u00e7\u00e3o acima/igual (ex. 1:23).",
+                "type": 3
+            },
+            {
+                "name": "posi\u00e7\u00e3o_inicial",
+                "description": "incluir m\u00fasicas da fila a partir da posi\u00e7\u00e3o espec\u00edficada.",
+                "type": 4,
+                "min_value": 1,
+                "max_value": 500
+            },
+            {
+                "name": "posi\u00e7\u00e3o_final",
+                "description": "incluir m\u00fasicas da fila at\u00e9 a posi\u00e7\u00e3o especificada.",
+                "type": 4,
+                "min_value": 1,
+                "max_value": 500
+            }
+        ]
+    },
+    {
+        "type": 1,
+        "name": "nightcore",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Ativar/Desativar o efeito nightcore (M\u00fasica acelerada com tom mais agudo).",
+        "options": []
+    },
+    {
+        "type": 1,
+        "name": "nodeinfo",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83d\udd27 Configura\u00e7\u00f5es] | Ver informa\u00e7\u00f5es dos servidores de m\u00fasica (lavalink servers).",
+        "options": []
+    },
+    {
+        "type": 1,
+        "name": "now_playing",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Exibir info da m\u00fasica que que voc\u00ea est\u00e1 ouvindo (em qualquer servidor).",
+        "options": []
+    },
+    {
+        "type": 1,
+        "name": "pause",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Pausar a m\u00fasica.",
+        "options": []
+    },
+    {
+        "type": 1,
+        "name": "play",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Tocar m\u00fasica em um canal de voz.",
+        "options": [
+            {
+                "name": "busca",
+                "description": "Nome ou link da m\u00fasica.",
+                "type": 3,
+                "required": true,
+                "autocomplete": true
+            },
+            {
+                "name": "posi\u00e7\u00e3o",
+                "description": "Colocar a m\u00fasica em uma posi\u00e7\u00e3o espec\u00edfica",
+                "type": 4
+            },
+            {
+                "name": "tocar_agora",
+                "description": "Tocar a m\u00fasica imediatamente (ao inv\u00e9s de adicionar na fila).",
+                "type": 3,
+                "choices": [
+                    {
+                        "name": "Yes",
+                        "value": "yes",
+                        "name_localizations": {
+                            "pt-BR": "Sim"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "recomendadas",
+                "description": "Tocar m\u00fasicas recomendadas com base no nome do artista - m\u00fasica informado",
+                "type": 3,
+                "choices": [
+                    {
+                        "name": "Yes",
+                        "value": "yes",
+                        "name_localizations": {
+                            "pt-BR": "Sim"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "selecionar_manualmente",
+                "description": "Escolher uma m\u00fasica manualmente entre os resultados encontrados",
+                "type": 5
+            },
+            {
+                "name": "op\u00e7\u00f5es",
+                "description": "Op\u00e7\u00f5es para processar playlist",
+                "type": 3,
+                "choices": [
+                    {
+                        "name": "Inverter Playlist",
+                        "value": "reversed"
+                    },
+                    {
+                        "name": "Misturar Playlist",
+                        "value": "shuffle"
+                    }
+                ]
+            },
+            {
+                "name": "server",
+                "description": "Usar um servidor de m\u00fasica espec\u00edfico na busca.",
+                "type": 3,
+                "autocomplete": true
+            },
+            {
+                "name": "selecionar_bot",
+                "description": "Selecionar um bot dispon\u00edvel manualmente.",
+                "type": 3,
+                "choices": [
+                    {
+                        "name": "Yes",
+                        "value": "yes",
+                        "name_localizations": {
+                            "pt-BR": "Sim"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": 1,
+        "name": "play_music_file",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Tocar arquivo de m\u00fasica em um canal de voz.",
+        "options": [
+            {
+                "name": "selecionar_bot",
+                "description": "Selecionar um bot dispon\u00edvel manualmente.",
+                "type": 3,
+                "choices": [
+                    {
+                        "name": "Yes",
+                        "value": "yes",
+                        "name_localizations": {
+                            "pt-BR": "Sim"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "tocar_agora",
+                "description": "Tocar a m\u00fasica imediatamente (ao inv\u00e9s de adicionar na fila).",
+                "type": 3,
+                "choices": [
+                    {
+                        "name": "Yes",
+                        "value": "yes",
+                        "name_localizations": {
+                            "pt-BR": "Sim"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "posi\u00e7\u00e3o",
+                "description": "Colocar a m\u00fasica em uma posi\u00e7\u00e3o espec\u00edfica",
+                "type": 4
+            },
+            {
+                "name": "server",
+                "description": "Usar um servidor de m\u00fasica espec\u00edfico na busca.",
+                "type": 3
+            },
+            {
+                "name": "arquivo",
+                "description": "arquivo de audio para tocar ou adicionar na fila",
+                "type": 11,
+                "required": true
+            }
+        ]
+    },
+    {
+        "type": 1,
+        "name": "player_settings",
+        "default_member_permissions": "32",
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83d\udd27 Configura\u00e7\u00f5es] | Alterar algumas configura\u00e7\u00f5es padr\u00f5es do player.",
+        "options": []
+    },
+    {
+        "type": 1,
+        "name": "queue",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "-",
+        "options": [
+            {
+                "name": "display",
+                "description": "[\ud83c\udfb6 M\u00fasica] | Exibir as m\u00fasicas que est\u00e3o na fila.",
+                "type": 1
+            },
+            {
+                "name": "reverse",
+                "description": "[\ud83c\udfb6 M\u00fasica] | Inverter a ordem das m\u00fasicas na fila",
+                "type": 1
+            },
+            {
+                "name": "clear",
+                "description": "[\ud83c\udfb6 M\u00fasica] | Limpar a fila de m\u00fasica.",
+                "type": 1,
+                "options": [
+                    {
+                        "name": "playlist",
+                        "description": "Incluir nome que tiver na playlist.",
+                        "type": 3,
+                        "autocomplete": true
+                    },
+                    {
+                        "name": "uploader",
+                        "description": "Incluir um nome que tiver no autor/artista/uploader da m\u00fasica.",
+                        "type": 3,
+                        "autocomplete": true
+                    },
+                    {
+                        "name": "membros_ausentes",
+                        "description": "Incluir m\u00fasicas adicionads por membros que sa\u00edram do canal.",
+                        "type": 5
+                    },
+                    {
+                        "name": "dura\u00e7\u00e3o_m\u00e1xima",
+                        "description": "Incluir m\u00fasicas com dura\u00e7\u00e3o m\u00e1xima especificada (ex. 1:45).",
+                        "type": 3
+                    },
+                    {
+                        "name": "duplicados",
+                        "description": "Incluir m\u00fasicas duplicadas",
+                        "type": 5
+                    },
+                    {
+                        "name": "membro",
+                        "description": "Incluir m\u00fasicas pedidas pelo membro selecionado.",
+                        "type": 6
+                    },
+                    {
+                        "name": "nome",
+                        "description": "Incluir um nome que tiver na m\u00fasica.",
+                        "type": 3
+                    },
+                    {
+                        "name": "quantidade",
+                        "description": "Quantidade de m\u00fasicas para mover.",
+                        "type": 4,
+                        "min_value": 0,
+                        "max_value": 99
+                    },
+                    {
+                        "name": "dura\u00e7\u00e3o_inicial",
+                        "description": "incluir m\u00fasicas com dura\u00e7\u00e3o acima/igual (ex. 1:23).",
+                        "type": 3
+                    },
+                    {
+                        "name": "posi\u00e7\u00e3o_inicial",
+                        "description": "incluir m\u00fasicas da fila a partir da posi\u00e7\u00e3o espec\u00edficada.",
+                        "type": 4,
+                        "min_value": 1,
+                        "max_value": 500
+                    },
+                    {
+                        "name": "posi\u00e7\u00e3o_final",
+                        "description": "incluir m\u00fasicas da fila at\u00e9 a posi\u00e7\u00e3o especificada.",
+                        "type": 4,
+                        "min_value": 1,
+                        "max_value": 500
+                    }
+                ]
+            },
+            {
+                "name": "shuffle",
+                "description": "[\ud83c\udfb6 M\u00fasica] | Misturar as m\u00fasicas da fila",
+                "type": 1
+            }
+        ]
+    },
+    {
+        "type": 1,
+        "name": "readd_songs",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Readicionar as m\u00fasicas tocadas na fila.",
+        "options": []
+    },
+    {
+        "type": 1,
+        "name": "remove",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Remover uma m\u00fasica espec\u00edfica da fila.",
+        "options": [
+            {
+                "name": "nome",
+                "description": "Nome da m\u00fasica completo.",
+                "type": 3,
+                "required": true,
+                "autocomplete": true
+            },
+            {
+                "name": "nome_exato",
+                "description": "Buscar por m\u00fasicas com a frase exata no nome da m\u00fasica ao inv\u00e9s de buscar palavra por palavra.",
+                "type": 5
+            }
+        ]
+    },
+    {
+        "type": 1,
+        "name": "remove_dj",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Remover um membro da lista de DJ's na sess\u00e3o atual do player.",
+        "options": [
+            {
+                "name": "membro",
+                "description": "Membro a ser adicionado.",
+                "type": 6,
+                "required": true
+            }
+        ]
+    },
+    {
+        "type": 1,
+        "name": "remove_dj_role",
+        "default_member_permissions": "32",
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83d\udd27 Configura\u00e7\u00f5es] | Remover um cargo da lista de DJ's do servidor.",
+        "options": [
+            {
+                "name": "cargo",
+                "description": "Cargo",
+                "type": 8,
+                "required": true
+            }
+        ]
+    },
+    {
+        "type": 1,
+        "name": "reset",
+        "default_member_permissions": "32",
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83d\udd27 Configura\u00e7\u00f5es] | Resetar as configura\u00e7\u00f5es relacionadas ao canal de pedir m\u00fasica (song request).",
+        "options": [
+            {
+                "name": "deletar_canal",
+                "description": "deletar o canal do player controller",
+                "type": 3,
+                "choices": [
+                    {
+                        "name": "n\u00e3o",
+                        "value": "n\u00e3o"
+                    },
+                    {
+                        "name": "sim",
+                        "value": "sim"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": 1,
+        "name": "restrict_mode",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Ativar/Desativar o modo restrito de comandos que requer DJ/Staff.",
+        "options": []
+    },
+    {
+        "type": 1,
+        "name": "resume",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Retomar/Despausar a m\u00fasica.",
+        "options": []
+    },
+    {
+        "type": 1,
+        "name": "rich_presence",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83d\udd27 Configura\u00e7\u00f5es] | Ativar/Desativar o sistema de rich-presence no seu status.",
+        "options": []
+    },
+    {
+        "type": 1,
+        "name": "rotate",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Rotacionar a fila para a m\u00fasica especificada.",
+        "options": [
+            {
+                "name": "nome",
+                "description": "Nome da m\u00fasica completo.",
+                "type": 3,
+                "required": true,
+                "autocomplete": true
+            },
+            {
+                "name": "nome_exato",
+                "description": "Buscar por m\u00fasicas com a frase exata no nome da m\u00fasica ao inv\u00e9s de buscar palavra por palavra.",
+                "type": 5
+            }
+        ]
+    },
+    {
+        "type": 1,
+        "name": "save_queue",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Experimental: Salvar a m\u00fasica e fila atual pra reus\u00e1-los a qualquer momento.",
+        "options": []
+    },
+    {
+        "type": 1,
+        "name": "search",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Buscar m\u00fasica e escolher uma entre os resultados para tocar.",
+        "options": [
+            {
+                "name": "busca",
+                "description": "Nome ou link da m\u00fasica.",
+                "type": 3,
+                "required": true,
+                "autocomplete": true
+            },
+            {
+                "name": "posi\u00e7\u00e3o",
+                "description": "Colocar a m\u00fasica em uma posi\u00e7\u00e3o espec\u00edfica",
+                "type": 4
+            },
+            {
+                "name": "tocar_agora",
+                "description": "Tocar a m\u00fasica imediatamente (ao inv\u00e9s de adicionar na fila).",
+                "type": 3,
+                "choices": [
+                    {
+                        "name": "Yes",
+                        "value": "yes",
+                        "name_localizations": {
+                            "pt-BR": "Sim"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "op\u00e7\u00f5es",
+                "description": "Op\u00e7\u00f5es para processar playlist",
+                "type": 3,
+                "choices": [
+                    {
+                        "name": "Inverter Playlist",
+                        "value": "reversed"
+                    },
+                    {
+                        "name": "Misturar Playlist",
+                        "value": "shuffle"
+                    }
+                ]
+            },
+            {
+                "name": "server",
+                "description": "Usar um servidor de m\u00fasica espec\u00edfico na busca.",
+                "type": 3,
+                "autocomplete": true
+            },
+            {
+                "name": "selecionar_bot",
+                "description": "Selecionar um bot dispon\u00edvel manualmente.",
+                "type": 3,
+                "choices": [
+                    {
+                        "name": "Yes",
+                        "value": "yes",
+                        "name_localizations": {
+                            "pt-BR": "Sim"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": 1,
+        "name": "seek",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Avan\u00e7ar/Retomar a m\u00fasica para um tempo espec\u00edfico.",
+        "options": [
+            {
+                "name": "tempo",
+                "description": "Tempo para avan\u00e7ar/voltar (ex: 1:45 / 40 / 0:30)",
+                "type": 3,
+                "required": true,
+                "autocomplete": true
+            }
+        ]
+    },
+    {
+        "type": 1,
+        "name": "set_voice_status",
+        "default_member_permissions": "32",
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Ativar/editar o sistema de an\u00fancio/status autom\u00e1tico do canal com o nome da m\u00fasica.",
+        "options": [
+            {
+                "name": "modelo",
+                "description": "Especifique manualmente um modelo de status (inclua placeholders).",
+                "type": 3,
+                "autocomplete": true
+            }
+        ]
+    },
+    {
+        "type": 1,
+        "name": "setup",
+        "default_member_permissions": "32",
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83d\udd27 Configura\u00e7\u00f5es] | Criar/escolher um canal dedicado para pedir m\u00fasicas e deixar player fixado.",
+        "options": [
+            {
+                "name": "canal",
+                "description": "Selecionar um canal existente",
+                "type": 7,
+                "channel_types": [
+                    0,
+                    2,
+                    5,
+                    13,
+                    15
+                ]
+            },
+            {
+                "name": "limpar_mensagens",
+                "description": "Limpar mensagens do canal selecionado (at\u00e9 100 mensagens, n\u00e3o efetivo em forum).",
+                "type": 3,
+                "choices": [
+                    {
+                        "name": "No",
+                        "value": "no",
+                        "name_localizations": {
+                            "pt-BR": "N\u00e3o"
+                        }
+                    },
+                    {
+                        "name": "Yes",
+                        "value": "yes",
+                        "name_localizations": {
+                            "pt-BR": "Sim"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": 1,
+        "name": "skip",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Pular a m\u00fasica atual que est\u00e1 tocando.",
+        "options": [
+            {
+                "name": "nome",
+                "description": "Nome da m\u00fasica (completa ou parte dela).",
+                "type": 3,
+                "autocomplete": true
+            },
+            {
+                "name": "play_only",
+                "description": "Apenas tocar a m\u00fasica imediatamente (sem rotacionar a flia)",
+                "type": 3,
+                "choices": [
+                    {
+                        "name": "Yes",
+                        "value": "yes",
+                        "name_localizations": {
+                            "pt-BR": "Sim"
+                        }
+                    }
+                ],
+                "name_localizations": {
+                    "pt-BR": "tocar_apenas"
+                }
+            },
+            {
+                "name": "nome_exato",
+                "description": "Buscar por m\u00fasicas com a frase exata no nome da m\u00fasica ao inv\u00e9s de buscar palavra por palavra.",
+                "type": 5
+            }
+        ]
+    },
+    {
+        "type": 1,
+        "name": "skipto",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Pular para uma m\u00fasica espec\u00edfica da fila.",
+        "options": [
+            {
+                "name": "nome",
+                "description": "Nome da m\u00fasica (completa ou parte dela).",
+                "type": 3,
+                "required": true,
+                "autocomplete": true
+            },
+            {
+                "name": "nome_exato",
+                "description": "Buscar por m\u00fasicas com a frase exata no nome da m\u00fasica ao inv\u00e9s de buscar palavra por palavra.",
+                "type": 5
+            }
+        ]
+    },
+    {
+        "type": 1,
+        "name": "song_request_thread",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Criar uma thread/conversa tempor\u00e1ria para song-request (pedido de m\u00fasica)",
+        "options": []
+    },
+    {
+        "type": 1,
+        "name": "stop",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Parar o player e me desconectar do canal de voz.",
+        "options": []
+    },
+    {
+        "type": 1,
+        "name": "volume",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Ajustar volume da m\u00fasica.",
+        "options": [
+            {
+                "name": "n\u00edvel",
+                "description": "n\u00edvel entre 5 a 150",
+                "type": 4,
+                "required": true,
+                "min_value": 5,
+                "max_value": 150
+            }
+        ]
+    },
+    {
+        "type": 1,
+        "name": "voteskip",
+        "default_member_permissions": null,
+        "default_permission": true,
+        "nsfw": false,
+        "integration_types": [
+            0
+        ],
+        "contexts": [
+            0
+        ],
+        "description": "[\ud83c\udfb6 M\u00fasica] | Votar para pular a m\u00fasica atual.",
+        "options": []
+    }
+]

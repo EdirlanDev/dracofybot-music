@@ -335,7 +335,7 @@ class BotPool:
         retries = 0
         exception = None
 
-        print(f"📶 - Verificando se o servidor de música [{data['identifier']}] está disponível.")
+        print(f"NET - Verificando se o servidor de música [{data['identifier']}] está disponível.")
 
         while True:
             if retries >= max_retries:
@@ -642,9 +642,9 @@ class BotPool:
             self.mongo_database = MongoDatabase(mongo_key, timeout=self.config["MONGO_TIMEOUT"],
                                                 cache_maxsize=self.config["DBCACHE_SIZE"],
                                                 cache_ttl=self.config["DBCACHE_TTL"])
-            print("🍃 - Database em uso: MongoDB")
+            print("DB - Database em uso: MongoDB")
         else:
-            print("🎲 - Database em uso: TinyMongo | Nota: Os arquivos da database serão salvos localmente na pasta: local_database")
+            print("DB - Database em uso: TinyMongo | Nota: Os arquivos da database serão salvos localmente na pasta: local_database")
 
         self.local_database = LocalDatabase(cache_maxsize=self.config["DBCACHE_SIZE"],
                                             cache_ttl=self.config["DBCACHE_TTL"])
@@ -684,7 +684,7 @@ class BotPool:
                 playlist_extra_page_limit=self.config['SPOTIFY_PLAYLIST_EXTRA_PAGE_LIMIT']
             )
         except Exception as e:
-            print(f"⚠️ - Suporte interno ao spotify desativado: {repr(e)}")
+            print(f"AVISO - Suporte interno ao spotify desativado: {repr(e)}")
             spotify_client = None
 
         self.spotify = spotify_client
@@ -858,7 +858,7 @@ class BotPool:
 
             @bot.event
             async def on_ready():
-                print(f'🟢 - {bot.user} - [{bot.user.id}] Online.')
+                print(f'ON - {bot.user} - [{bot.user.id}] Online.')
 
             async def initial_setup():
 
@@ -1361,8 +1361,7 @@ class BotCore(commands.AutoShardedBot):
             warn_msg = f"Atenção: O bot [{self.user}] (ID: {self.user.id}) foi configurado no portal do desenvolvedor " \
                   "como bot público\n" \
                   "lembrando que se caso o bot seja divulgado pra ser adicionado publicamente o mesmo terá que " \
-                  "estar sob as condições da licença GPL-2: " \
-                  "https://github.com/zRitsu/MuseHeart-MusicBot/blob/main/LICENSE\n" \
+                  "estar sob as condições da licença GPL-2.\n" \
                   "Caso não queira seguir as condições da licença no seu bot, você pode deixar o bot privado desmarcando a " \
                   f"opção public bot acessando o link: https://discord.com/developers/applications/{self.user.id}/bot"
 
@@ -1425,22 +1424,22 @@ class BotCore(commands.AutoShardedBot):
                         self.unload_extension(module_filename)
                         self.load_extension(module_filename)
                         if not self.bot_ready and load_modules_log:
-                            print(f"🟦 - {bot_name} - {filename}.py Recarregado.")
+                            print(f"MODULE - {bot_name} - {filename}.py Recarregado.")
                         load_status["reloaded"].append(f"{filename}.py")
                     except (commands.ExtensionAlreadyLoaded, commands.ExtensionNotLoaded):
                         try:
                             self.load_extension(module_filename)
                             if not self.bot_ready and load_modules_log:
-                                print(f"🟩 - {bot_name} - {filename}.py Carregado.")
+                                print(f"MODULE - {bot_name} - {filename}.py Carregado.")
                             load_status["loaded"].append(f"{filename}.py")
                         except Exception as e:
-                            print(f"❌- {bot_name} - Falha ao carregar/recarregar o módulo: {filename}")
+                            print(f"FAIL - {bot_name} - Falha ao carregar/recarregar o módulo: {filename}")
                             if not self.bot_ready:
                                 raise e
                             load_status["failed"].append(f"{filename}.py")
                             traceback.print_exc()
                     except Exception as e:
-                        print(f"❌ - {bot_name} - Falha ao carregar/recarregar o módulo: {filename}")
+                        print(f"FAIL - {bot_name} - Falha ao carregar/recarregar o módulo: {filename}")
                         if not self.bot_ready:
                             raise e
                         load_status["failed"].append(f"{filename}.py")

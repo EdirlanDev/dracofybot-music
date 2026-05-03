@@ -55,7 +55,8 @@ class VolumeInteraction(disnake.ui.View):
         self.add_item(select)
 
     async def callback(self, interaction: disnake.MessageInteraction):
-        await interaction.response.edit_message(content=f"Volume alterado!",embed=None, view=None)
+        await interaction.response.defer()
+        await interaction.edit_original_message(content=f"Volume alterado!",embed=None, view=None)
         self.volume = int(interaction.data.values[0][4:])
         self.stop()
 
@@ -268,7 +269,7 @@ class QueueInteraction(disnake.ui.View):
         self.update_components()
 
     async def track_select_callback(self, interaction: disnake.MessageInteraction):
-
+        await interaction.response.defer()
         track_id = interaction.values[0][13:]
 
         track = None
@@ -292,12 +293,12 @@ class QueueInteraction(disnake.ui.View):
         self.update_embed()
 
         if self.message:
-            await interaction.response.edit_message(embed=self.embed, view=self)
+            await interaction.edit_original_message(embed=self.embed, view=self)
         else:
             await interaction.edit_original_message(embed=self.embed, view=self)
 
     async def invoke_command(self, interaction: disnake.MessageInteraction):
-
+        await interaction.response.defer()
         try:
             player = self.bot.music.players[self.user.guild.id]
         except KeyError:
@@ -318,7 +319,6 @@ class QueueInteraction(disnake.ui.View):
                     await player.seek(0)
                     player.set_command_log(emoji="⏪", text=f"{interaction.author.mention} retrocedeu da música para: `0:00`")
                     player.update = True
-                    await interaction.response.defer()
                     return
                 else:
                     command = self.bot.get_slash_command("skip")
@@ -342,47 +342,44 @@ class QueueInteraction(disnake.ui.View):
             if update_inter:
                 self.update_pages()
                 self.update_embed()
-                if self.message:
-                    await interaction.response.edit_message(embed=self.embed, view=self)
-                else:
-                    await interaction.edit_original_message(embed=self.embed, view=self)
+                await interaction.edit_original_message(embed=self.embed, view=self)
 
         except Exception as e:
             self.bot.dispatch('interaction_player_error', interaction, e)
 
     async def first(self, interaction: disnake.MessageInteraction):
-
+        await interaction.response.defer()
         self.current_page = 0
         self.current_track = self.track_pages[self.current_page][0]
         self.update_embed()
-        await interaction.response.edit_message(embed=self.embed, view=self)
+        await interaction.edit_original_message(embed=self.embed, view=self)
 
     async def back(self, interaction: disnake.MessageInteraction):
-
+        await interaction.response.defer()
         if self.current_page == 0:
             self.current_page = self.max_page
         else:
             self.current_page -= 1
         self.current_track = self.track_pages[self.current_page][0]
         self.update_embed()
-        await interaction.response.edit_message(embed=self.embed, view=self)
+        await interaction.edit_original_message(embed=self.embed, view=self)
 
     async def next(self, interaction: disnake.MessageInteraction):
-
+        await interaction.response.defer()
         if self.current_page == self.max_page:
             self.current_page = 0
         else:
             self.current_page += 1
         self.current_track = self.track_pages[self.current_page][0]
         self.update_embed()
-        await interaction.response.edit_message(embed=self.embed, view=self)
+        await interaction.edit_original_message(embed=self.embed, view=self)
 
     async def last(self, interaction: disnake.MessageInteraction):
-
+        await interaction.response.defer()
         self.current_page = self.max_page
         self.current_track = self.track_pages[self.current_page][0]
         self.update_embed()
-        await interaction.response.edit_message(embed=self.embed, view=self)
+        await interaction.edit_original_message(embed=self.embed, view=self)
 
 
     async def stop_interaction(self, interaction: disnake.MessageInteraction):

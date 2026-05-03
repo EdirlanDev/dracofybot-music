@@ -94,13 +94,13 @@ class IndexHandler(tornado.web.RequestHandler):
                 pending_bots.append(f"<tr><td>{bot.identifier}</td></tr>")
 
         if ready_bots:
-            msg += f"\n<p style=\"font-size:20px\">Bots Disponíveis:</p>" \
+            msg += f"\n<p style=\"font-size:20px\"><b>DracoFy DJ</b> - Bots Online:</p>" \
                    f"{style}\n<table cellpadding=\"3\">{''.join(ready_bots)}</table>"
 
         if pending_bots:
-            msg += f"\n<p style=\"font-size:20px\">Bots em inicialização:</p>" \
+            msg += f"\n<p style=\"font-size:20px\">DracoFy DJ - Inicializando:</p>" \
                    f"{style}\n<table cellpadding=\"10\">{''.join(pending_bots)}</table>\n" \
-                   f"Nota: Recarregue a página para conferir se o bot está disponível."
+                   f"Nota: Recarregue a página em alguns instantes."
 
         if failed_bots:
 
@@ -111,8 +111,7 @@ class IndexHandler(tornado.web.RequestHandler):
             }
             </style>"""
 
-            msg += f"\n<p style=\"font-size:20px\">Os seguintes tokens configurado na ENV/SECRET/.env falharam " \
-                   f"na inicialização:</p>" \
+            msg += f"\n<p style=\"font-size:20px\">Falha na inicialização dos seguintes tokens:</p>" \
                    f"{failed_table_style}\n<table cellpadding=\"10\">{''.join(failed_bots)}</table>"
 
         ws_url = "<Body onLoad=\" rpcUrl()\" ><p id=\"url\" style=\"color:blue\"></p><script>function rpcUrl(){document." \
@@ -120,16 +119,15 @@ class IndexHandler(tornado.web.RequestHandler):
                      ".replace(\"https\", \"wss\") + \"ws\"}</script></body>"
 
         msg += f"<p><a href=\"https://github.com/zRitsu/DC-MusicBot-RPC" \
-              f"/releases\" target=\"_blank\">Baixe o app de rich presence aqui.</a></p>Link para adicionar no app " \
-              f"de RPC: {ws_url}"
+              f"/releases\" target=\"_blank\">Baixe o App de Rich Presence (RPC) aqui.</a></p>Link para o DracoFy RPC: {ws_url}"
 
         if self.config["ENABLE_RPC_AUTH"]:
-            msg += f"\nNão esqueça de obter o token para configurar no app, use o comando /rich_presence para obter um.\n<br><br>"
+            msg += f"\nPara usar o RPC, obtenha seu token com o comando: /rich_presence.\n<br><br>"
 
         msg += f"\nPrefixo padrão: {self.pool.config['DEFAULT_PREFIX']}<br><br>"
 
         if self.pool.commit:
-            msg += f"\nCommit Atual: <a href=\"{self.pool.remote_git_url}/commit/{self.pool.commit}\" target=\"_blank\">{self.pool.commit[:7]}</a>"
+            msg += f"\nSistema DracoFy DJ"
 
         self.write(msg)
 
@@ -307,7 +305,7 @@ class WSClient:
 
         self.backoff = 7
 
-        print("🌐 - RPC client conectado, sincronizando rpc dos bots...")
+        print("RPC - RPC client conectado, sincronizando rpc dos bots...")
 
         if not self.all_bots:
             self.all_bots = self.pool.get_all_bots()
@@ -379,7 +377,7 @@ class WSClient:
                 if isinstance(e, aiohttp.WSServerHandshakeError):
                     print(f"🌐 - Falha ao conectar no servidor RPC, tentando novamente em {(b:=int(self.backoff))} segundo{'s'[:b^1]}.")
                 else:
-                    print(f"🌐 - Conexão com servidor RPC perdida - Reconectando em {(b:=int(self.backoff))} segundo{'s'[:b^1]}.")
+                    print(f"RPC - Conexão com servidor RPC perdida - Reconectando em {(b:=int(self.backoff))} segundo{'s'[:b^1]}.")
 
                 await asyncio.sleep(self.backoff)
                 self.backoff *= 2.5
@@ -432,7 +430,7 @@ def run_app(pool: BotPool, message: str = "", config: dict = None):
         (r'/ws', WebSocketHandler),
     ])
 
-    app.listen(port=config.get("PORT") or environ.get("PORT", 80))
+    app.listen(port=config.get("PORT") or environ.get("PORT", 55555))
 
 
 def start(pool: BotPool, message="", config: dict = None):

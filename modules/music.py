@@ -661,12 +661,7 @@ class Music(commands.Cog):
         ephemeral = None
 
         if not inter.response.is_done():
-            try:
-                async with timeout(1.5):
-                    ephemeral = await self.is_request_channel(inter, data=guild_data, ignore_thread=True)
-            except asyncio.TimeoutError:
-                ephemeral = True
-            await inter.response.defer(ephemeral=ephemeral, with_message=True)
+            await inter.response.defer(ephemeral=True) # Defer immediately to avoid timeout
 
         """if not inter.author.voice:
             raise NoVoice()

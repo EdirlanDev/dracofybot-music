@@ -217,6 +217,7 @@ def load_config():
         "SPOTIFY_PLAYLIST_EXTRA_PAGE_LIMIT",
         "BOT_ADD_REMOVE_LOG_CHANNEL_ID",
         "YOUTUBE_TRACK_COOLDOWN",
+        "PORT",
     ]:
 
         if not CONFIG[i]:
@@ -284,7 +285,7 @@ def load_config():
         except KeyError as e:
             raise Exception(f"Você usou uma configuração inválida! {i}: {CONFIG[i]}\n{repr(e)}")
 
-    CONFIG["RPC_SERVER"] = CONFIG["RPC_SERVER"].replace("$PORT", CONFIG.get("PORT") or environ.get("PORT", "80"))
+    CONFIG["RPC_SERVER"] = CONFIG["RPC_SERVER"].replace("$PORT", str(CONFIG.get("PORT") or environ.get("PORT", "80")))
 
     if CONFIG["WAIT_FOR_MEMBERS_TIMEOUT"] < 60:
         CONFIG["WAIT_FOR_MEMBERS_TIMEOUT"] = 60
