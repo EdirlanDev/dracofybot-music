@@ -59,7 +59,7 @@ def download_file(url, filename):
 
 def validate_java(cmd: str, debug: bool = False):
     try:
-        java_info = subprocess.check_output([cmd, "-version"], stderr=subprocess.STDOUT, text=True)
+        java_info = subprocess.check_output(f"{cmd} -version", stderr=subprocess.STDOUT, text=True, shell=True)
         if int(java_info.splitlines()[0].split()[2].strip('"').split('.')[0]) >= 17:
             return cmd
     except Exception as e:
@@ -235,16 +235,14 @@ def run_lavalink(
         if download_file(url, filename):
             clear_plugins = True
 
-    java_args = []
-
     if lavalink_cpu_cores >= 1:
-        java_args.append(f"-XX:ActiveProcessorCount={lavalink_cpu_cores}")
+        java_cmd += f" -XX:ActiveProcessorCount={lavalink_cpu_cores}"
 
     if lavalink_ram_limit > 10:
-        java_args.append(f"-Xmx{lavalink_ram_limit}m")
+        java_cmd += f" -Xmx{lavalink_ram_limit}m"
 
     if 0 < lavalink_initial_ram < lavalink_ram_limit:
-        java_args.append(f"-Xms{lavalink_ram_limit}m")
+        java_cmd += f" -Xms{lavalink_ram_limit}m"
 
     if os.name != "nt":
 
@@ -253,7 +251,7 @@ def run_lavalink(
 
         os.makedirs("./.tempjar/undertow-docbase.80.2258596138812103750")
 
-        java_args.append(f"-Djava.io.tmpdir={os.getcwd()}/.tempjar")
+        java_cmd += f" -Djava.io.tmpdir={os.getcwd()}/.tempjar"
 
     if clear_plugins:
         try:
@@ -261,12 +259,12 @@ def run_lavalink(
         except:
             pass
 
-    cmd_list = [java_cmd] + java_args + ["-jar", "Lavalink.jar"]
+    java_cmd += " -jar Lavalink.jar"
 
     print("LL - Iniciando o servidor Lavalink (dependendo da hospedagem o lavalink pode demorar iniciar, "
           "o que pode ocorrer falhas em algumas tentativas de conexão até ele iniciar totalmente).")
 
-    lavalink_process = subprocess.Popen(cmd_list, stdout=subprocess.DEVNULL)
+    lavalink_process = subprocess.Popen(java_cmd.split(), stdout=subprocess.DEVNULL)
 
     if lavalink_additional_sleep:
         print(f"🕙 - Aguarde {lavalink_additional_sleep} segundos...")

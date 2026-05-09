@@ -234,53 +234,44 @@ class BotPool:
 
     async def start_bot(self, bot: BotCore):
 
-        retries = 0
-        while True:
-            try:
-                await bot.start(bot.http.token)
-                break
-            except disnake.HTTPException as error:
+        e = None
 
-                if error.status == 429 or "429 Too Many Requests" in str(error):
+        try:
+            await bot.start(bot.http.token)
+        except disnake.HTTPException as error:
 
-                    if not self.config["KILL_ON_429"]:
+            if error.status == 429 or "429 Too Many Requests" in str(e):
 
-                        if self.killing_state == "ratelimit":
-                            return
+                if not self.config["KILL_ON_429"]:
 
-                        self.killing_state = "ratelimit"
-                        print(f"Aplicação {bot.identifier} com ratelimit do discord!")
-                        await asyncio.sleep(10)
-                        continue
-
-                    if self.killing_state is True:
+                    if self.killing_state == "ratelimit":
                         return
 
-                    print(
-                        f"Aplicação {bot.identifier} com ratelimit do discord!\n"
-                        "Finalizando/Reiniciando o processo em 5 segundos..."
-                    )
+                    self.killing_state = "ratelimit"
+                    print("Aplicação com ratelimit do discord!")
+                    await asyncio.sleep(10)
+                    raise e
 
-                    self.killing_state = True
-
-                    await asyncio.sleep(5)
-
-                    await asyncio.create_subprocess_shell("kill 1")
-
+                if self.killing_state is True:
                     return
 
-                if error.status >= 500 and retries < 5:
-                    retries += 1
-                    print(f"⚠️ - Erro no servidor do Discord ao tentar iniciar o bot {bot.identifier} (Tentativa {retries}/5). Erro: {repr(error)}")
-                    await asyncio.sleep(10)
-                    continue
+                print(
+                    "Aplicação com ratelimit do discord!\n"
+                    "Finalizando/Reiniciando o processo em 5 segundos..."
+                )
 
-                e = error
-                break
+                self.killing_state = True
 
-            except Exception as error:
-                e = error
-                break
+                await asyncio.sleep(5)
+
+                await asyncio.create_subprocess_shell("kill 1")
+
+                return
+
+            e = error
+
+        except Exception as error:
+            e = error
 
         if e:
 
@@ -305,8 +296,7 @@ class BotPool:
                 print(("=" * 30) + f"\nFalha ao iniciar o bot configurado no: {bot.identifier}\n" + e.replace('<br>', '\n') + "\n" + ( "=" * 30))
 
             else:
-                print(f"❌ - Falha ao iniciar o bot configurado no: {bot.identifier}")
-                traceback.print_exception(type(e), e, e.__traceback__)
+                traceback.print_tb(e.__traceback__)
                 e = repr(e)
             self.failed_bots[bot.identifier] = e
             try:
@@ -668,20 +658,17 @@ class BotPool:
              }
         )
 
-        if os.path.isdir(".git"):
-            try:
-                self.commit = check_output(['git', 'rev-parse', 'HEAD']).decode('ascii').strip()
-                print(f"📥 - Commit ver: {self.commit}")
-            except:
-                self.commit = None
-
-            try:
-                self.remote_git_url = check_output(['git', 'remote', '-v']).decode(
-                    'ascii').strip().split("\n")[0][7:].replace(".git", "").replace(" (fetch)", "")
-            except:
-                pass
-        else:
+        try:
+            self.commit = check_output(['git', 'rev-parse', 'HEAD']).decode('ascii').strip()
+            print(f"📥 - Commit ver: {self.commit}")
+        except:
             self.commit = None
+
+        try:
+            self.remote_git_url = check_output(['git', 'remote', '-v']).decode(
+                'ascii').strip().split("\n")[0][7:].replace(".git", "").replace(" (fetch)", "")
+        except:
+            pass
 
         if not self.remote_git_url:
             self.remote_git_url = self.config["SOURCE_REPO"]
